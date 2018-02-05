@@ -4,8 +4,15 @@ https://help.github.com/articles/fork-a-repo/
 Sync a Fork
 https://help.github.com/articles/syncing-a-fork/
 
+git fetch upstream
+git checkout master
+git merge upstream/master
+
 Push to Remote
 https://help.github.com/articles/pushing-to-a-remote/
+
+git commit -m "MyMessage"
+git push https://github.com/JuanCarlosLira/DoublyLinkedList master
 
 Compilation Command
 gcc -Wall FileIO.c UserDefined.c listTest.c -o a.out `pkg-config --cflags --libs glib-2.0`
