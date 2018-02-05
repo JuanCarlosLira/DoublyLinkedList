@@ -62,7 +62,7 @@
  *                           Main entry point                            *
  *************************************************************************/
 int main (int argc, const char * argv[]) {          // Program entry point
-    
+
    FILE   *fp;                                      // Pointer to the file
    GList * theList_p = NULL;           // Used to test the list operations
    GList * item_p = NULL;                    // Used in the find operation
@@ -82,7 +82,7 @@ int main (int argc, const char * argv[]) {          // Program entry point
             printf ("Abnormal termination\n");
           exit (EXIT_FAILURE);                    // Terminate the program
         } else {
-            
+
             while (!feof(fp)){
 
                // Allocate memory for new item from the input file
@@ -94,9 +94,9 @@ int main (int argc, const char * argv[]) {          // Program entry point
                */
                int number = GetInt(fp);
                char * string = GetString(fp);
-               
+
                aNode_p = NewItem(number, string);
-                
+
 #ifdef DEBUG
                 printf("Integer read is %d:\n", aNode_p->number);
                 printf("String read is %s:\n", aNode_p->theString);
@@ -119,14 +119,14 @@ int main (int argc, const char * argv[]) {          // Program entry point
            aNode_p = g_list_last(theList_p)->data;  // Last element address
            theList_p = g_list_remove(theList_p, aNode_p);    // Remove node
            FreeItem(aNode_p);                            // Deallocate data
-            
+
             printf("\n Test deletion from the Tail:\n");
             if (PrintList(theList_p) != EXIT_SUCCESS)
                 printf("Error printing the list\n");
-            
+
             /****** Test Insertion at the Head *****/
            aNode_p = NewItem(9, "Gyro Gearloose");          // New element
-            
+
 #ifdef DEBUG
             printf("Integer to be inserted at the head %d:\n",
                    aNode_p->number);
@@ -137,7 +137,7 @@ int main (int argc, const char * argv[]) {          // Program entry point
            printf("\n Test insertion at the Head:\n");
            if (PrintList(theList_p) != EXIT_SUCCESS)
               printf("Error printing the list\n");
-            
+
             /***** Test deletion at the head *****/
            aNode_p = g_list_first(theList_p)->data; // First element address
            theList_p = g_list_remove(theList_p, aNode_p);     // Remove node
@@ -236,7 +236,7 @@ int main (int argc, const char * argv[]) {          // Program entry point
 
            if (DestroyList(item_p) != EXIT_SUCCESS)
               perror("The second list was not destroyed successfullt");
-           
+
         }
 
         fclose (fp);                        /* Close the input data file */
@@ -244,4 +244,3 @@ int main (int argc, const char * argv[]) {          // Program entry point
        return (EXIT_SUCCESS);
     }
 }
-

@@ -6,3 +6,6 @@ https://help.github.com/articles/syncing-a-fork/
 
 Push to Remote
 https://help.github.com/articles/pushing-to-a-remote/
+
+Compilation Command
+gcc -Wall FileIO.c UserDefined.c listTest.c -o a.out `pkg-config --cflags --libs glib-2.0`
