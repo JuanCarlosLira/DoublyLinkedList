@@ -11,6 +11,7 @@ git merge upstream/master
 Push to Remote
 https://help.github.com/articles/pushing-to-a-remote/
 
+git add -A
 git commit -m "MyMessage"
 git push https://github.com/JuanCarlosLira/DoublyLinkedList master
 
