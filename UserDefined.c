@@ -31,3 +31,15 @@ node_p NewItem (int theNumber, char * theString){
 
   return newItem;
 }
+
+int FreeItem (const void *data_p){
+  node_p p = (node_p)data_p;
+  free(p);
+  p == NULL;
+
+  if(p == NULL){
+    return EXIT_SUCCESS;
+  }else{
+    return EXIT_FAILURE;
+  }
+}
