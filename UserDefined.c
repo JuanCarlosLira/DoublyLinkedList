@@ -124,6 +124,24 @@ int compareInt(node_p value_p1,node_p value_p2) {
   return 0;
 }
 
+int CompareItems (const void *item1_p, const void *item2_p) {
+  node_p i1 = (node_p)item1_p;
+  node_p i2 = (node_p)item2_p;
+  int x = i1->number;
+  int y = i2->number;
+  //printf("x=%d , y=%d\n", x,y);
+  if (x>y) {
+    return 1;
+  }
+  if (x==y) {
+    return 0;
+  }
+  if (x<y) {
+    return -1;
+  }
+  return 0;
+}
+
 GList * FindInList (GList * myList_p, const void *value_p, int key) {
   switch (key) {
     case INT:

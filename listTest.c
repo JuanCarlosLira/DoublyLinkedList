@@ -222,7 +222,7 @@ int main (int argc, const char * argv[]) {          // Program entry point
            }
 
            /***** Test sorting the list by its number field *****/
-           //item_p = g_list_sort(item_p, CompareItems);
+           item_p = g_list_sort(item_p, CompareItems);
            if (item_p == NULL){
               printf("Error: failed to sort copy the list \n");
            } else {
