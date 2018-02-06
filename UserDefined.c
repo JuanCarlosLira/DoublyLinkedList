@@ -28,7 +28,7 @@ int PrintList (GList * myList_p){
 node_p NewItem (int theNumber, char * theString){
   node_p newItem = (node_p)malloc(sizeof(myData));
   newItem->number = theNumber;
-  newItem->theString = theString;
+  newItem->theString = strdup(theString);
 
   return newItem;
 }
