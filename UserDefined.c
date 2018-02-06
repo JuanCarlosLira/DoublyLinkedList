@@ -60,6 +60,11 @@ GList * CopyList (GList * inputList) {
   return newList;
 }
 
+int DestroyList (GList * theList_p) {
+  g_list_free_full (theList_p, (GDestroyNotify)FreeItem);
+  return EXIT_SUCCESS;
+}
+
 int compareSingleStr(node_p value_p1,char * value_p2) {
   char *str1 = value_p1->theString;
   char *str2 = value_p2;
