@@ -46,6 +46,20 @@ int FreeItem (const void *data_p){
   }*/
 }
 
+void * CopyItems (const void *source_p) {
+  node_p newItem = (node_p)malloc(sizeof(myData));
+  node_p oldItem = (node_p)source_p;
+  newItem->number = oldItem->number;
+  newItem->theString = strdup(oldItem->theString);
+
+  return newItem;
+}
+
+GList * CopyList (GList * inputList) {
+  GList *newList = g_list_copy_deep (inputList, (GCopyFunc)CopyItems, NULL);
+  return newList;
+}
+
 int compareSingleStr(node_p value_p1,char * value_p2) {
   char *str1 = value_p1->theString;
   char *str2 = value_p2;

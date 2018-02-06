@@ -214,7 +214,7 @@ int main (int argc, const char * argv[]) {          // Program entry point
            /***** Test copying the list *****/
            printf("\nCreating a copy of the list\n");
 
-           //item_p = CopyList(theList_p);
+           item_p = CopyList(theList_p);
            if (item_p == NULL){
               printf("Error: failed to copy the list \n");
            } else {
