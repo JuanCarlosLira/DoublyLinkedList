@@ -35,6 +35,7 @@ node_p NewItem (int theNumber, char * theString){
 
 int FreeItem (const void *data_p){
   node_p p = (node_p)data_p;
+  free(p->theString);
   free(p);
 
   return EXIT_SUCCESS;
